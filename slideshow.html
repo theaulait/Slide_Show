@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="slideshow.css">
+	<title>Slideshow</title>
+</head>
+
+<body>
+
+<div>
+	<div class="fade">
+	<div>
+	<img src="thailand.jpg"><p>Thailand, Bangkok</p>
+	</div>
+	</div>
+	<div class="fade">
+	<div>
+	<img src="shanghai.jpg"><p>China, Shanghai</p>
+	</div>
+	</div>
+	<div class="fade">
+	<div>
+	<img src="iceland.jpg"><p>Iceland, Reykjavik</p>
+	</div>
+	</div>
+	<div class="fade">
+	<div>
+	<img src="pyramids.jpg"><p>Eygpt, Giza</p>
+	</div>
+	</div>
+	<div class="fade"><div><img src="ullengdo.jpg"><p>South Korea, Suwon</p>
+	</div></div>
+<a class="back" onclick="forward(-1)"> &laquo;</a>
+<a class="forward" onclick="forward(+1)">&raquo;</a>
+</div>
+
+<script>
+	var slideIndex = 1;
+	showImage(slideIndex);
+
+	function forward(n) {
+		showImage(slideIndex += n);
+	}
+	function showImage(n){
+		var i;
+		var x = document.getElementsByClassName("fade");
+		if(n > x.length) {
+			slideIndex = 1}
+		if(n < 1) { slideIndex - x.length };
+		for (i= 0; i < x.length; i++){
+			x[i].style.display = "none";
+		}	
+	x[slideIndex-1].style.display = "block";	
+	}
+</script>
+
+</body>
+</html>
